@@ -1,0 +1,116 @@
+<ObjectDefinition>
+  <information>
+    <icon>/images/eclipseIcons/page_obj.gif</icon>
+    <description></description>
+    <displayField>object_id</displayField>
+    <order>100</order>
+    <visibility>5</visibility>
+    <wfConstraintsPath></wfConstraintsPath>
+    <configType>xml</configType>
+    <createTemplateId></createTemplateId>
+    <createTemplateObject></createTemplateObject>
+    <defaultDisplay>false</defaultDisplay>
+    <dynamic>false</dynamic>
+    <importIfMandatoryPresent>false</importIfMandatoryPresent>
+    <maxInstances>0</maxInstances>
+    <relatedObjects></relatedObjects>
+    <retainIfImportIsEmpty>false</retainIfImportIsEmpty>
+    <name>Address Group v10.2</name>
+    <group>Objects|whitelisting</group>
+    <importonce>false</importonce>
+    <importrank>1</importrank>
+    <reorderinstances>false</reorderinstances>
+    <sortascending>true</sortascending>
+    <sortauto>true</sortauto>
+    <sortnumerical>true</sortnumerical>
+    <sortvariable>params._order</sortvariable>
+    <directoryNames>
+      <directoryName>SASE</directoryName>
+    </directoryNames>
+  </information>
+  <variables frozen="0">
+    <variable displayName="Group Name" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="150" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="true" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" isCompositeKey="false" shared="false" isMandatory="false" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Address" name="params.members.0.member" startIncrement="0" type="ObjectRef" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="150" displayOrder="1" increment="0" refServiceURI="" keepOnImport="false" editable="true" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" isCompositeKey="false" shared="false" isMandatory="false" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <classes>
+        <class>address_ip_netmask</class>
+        <class>address_ip_range</class>
+        <class>Address_PAN_OS</class>
+      </classes>
+    </variable>
+    <variable displayName="Description" name="params.description" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="|" groupDisplayName="" maxLength="100" displayOrder="3" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" isMandatory="false" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example>
+    <content>
+&lt;response status=&quot;success&quot; code=&quot;19&quot;&gt;
+    &lt;result total-count=&quot;1&quot; count=&quot;1&quot;&gt;
+        &lt;address-group&gt;
+            &lt;entry name=&quot;sdi_group&quot;&gt;
+                &lt;static&gt;
+                    &lt;member&gt;sdi_test&lt;/member&gt;
+                    &lt;member&gt;testAddress&lt;/member&gt;
+                &lt;/static&gt;
+            &lt;/entry&gt;
+        &lt;/address-group&gt;
+    &lt;/result&gt;
+&lt;/response&gt;</content>
+  </example>
+  <command name="IMPORT">
+    <operation><![CDATA[type=config&action=show]]></operation>
+    <post_template></post_template>
+    <parser>
+      <section>
+        <regexp>@^\s \s*$@</regexp>
+        <xpath>//result/address-group/entry</xpath>
+      </section>
+      <lines>
+        <line>
+          <regexp>@name=&quot;(?&lt;object_id&gt;.*)&quot;@</regexp>
+          <xpath>//entry/@name</xpath>
+        </line>
+        <line>
+          <array name="static">
+            <lines>
+              <line>
+                <regexp>@&lt;member&gt;(?&lt;address&gt;.*)&lt;/member&gt;@</regexp>
+                <xpath>//member</xpath>
+              </line>
+            </lines>
+            <xpath>//static/member</xpath>
+          </array>
+          <regexp></regexp>
+          <xpath></xpath>
+        </line>
+      </lines>
+    </parser>
+    <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/address-group</xpath>
+  </command>
+  <command name="CREATE">
+    <operation><![CDATA[<entry name="{$params.object_id}">
+    <static>
+    	{foreach $params.members as $static_addr}
+			<member>{$static_addr.member}</member>
+    	{/foreach}
+    </static>
+</entry>]]></operation>
+    <rest>type=config&amp;action=set</rest>
+    <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/address-group</xpath>
+  </command>
+  <command name="UPDATE">
+    <operation><![CDATA[<entry name="{$params.object_id}">
+    <static>
+    	{foreach $params.members as $static_addr}
+			<member>{$static_addr.member}</member>
+    	{/foreach}
+    </static>
+</entry>]]></operation>
+    <rest>type=config&amp;action=set</rest>
+    <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/address-group/entry[@name=&quot;{$params.object_id}&quot;]</xpath>
+  </command>
+  <command name="DELETE">
+    <rest>type=config&amp;action=delete</rest>
+    <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/address-group/entry[@name=&quot;{$params.object_id}&quot;]</xpath>
+  </command>
+  <command name="CONSTRAINT"/>
+  <displayName>Address Group v10.2</displayName>
+  <order>100</order>
+</ObjectDefinition>

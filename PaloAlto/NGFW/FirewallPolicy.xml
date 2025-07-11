@@ -1,0 +1,323 @@
+<ObjectDefinition>
+  <information>
+    <icon>none</icon>
+    <description></description>
+    <displayField>object_id</displayField>
+    <order>0</order>
+    <visibility/>
+    <wfConstraintsPath></wfConstraintsPath>
+    <configType>xml</configType>
+    <createTemplateId></createTemplateId>
+    <createTemplateObject></createTemplateObject>
+    <defaultDisplay>false</defaultDisplay>
+    <dynamic>false</dynamic>
+    <importIfMandatoryPresent>false</importIfMandatoryPresent>
+    <maxInstances>0</maxInstances>
+    <relatedObjects></relatedObjects>
+    <retainIfImportIsEmpty>false</retainIfImportIsEmpty>
+    <name>Security Policy PAN OS v10.2</name>
+    <group>Default|whitelisting</group>
+    <importonce>false</importonce>
+    <importrank>5000</importrank>
+    <reorderinstances>false</reorderinstances>
+    <sortascending>false</sortascending>
+    <sortauto>false</sortauto>
+    <sortnumerical>false</sortnumerical>
+    <sortvariable>params._order</sortvariable>
+    <directoryNames>
+      <directoryName>SASE</directoryName>
+    </directoryNames>
+  </information>
+  <variables frozen="0">
+    <variable displayName="Rule Name" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Action" name="params.action" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" isMandatory="true" isUserLocked="false" isEditLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Service" name="params.services.0.service" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Application" name="params.applications.0.application" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Source Adress" name="params.sources.0.source" startIncrement="0" type="ObjectRef" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <classes>
+        <class>address_group</class>
+        <class>Address_PAN_OS</class>
+      </classes>
+    </variable>
+    <variable displayName="Destination Adress" name="params.destinations.0.destination" startIncrement="0" type="ObjectRef" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <classes>
+        <class>address_group</class>
+        <class>Address_PAN_OS</class>
+      </classes>
+    </variable>
+    <variable displayName="Source  Zone" name="params.sources_zones.0.from" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="possibles values: public ou outside" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Destination Zone" name="params.destinations_zones.0.to" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="possibles values: public ou outside" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example>
+    <content>&lt;response status=&quot;success&quot;&gt;
+    &lt;result&gt;
+        &lt;rules&gt;
+            &lt;entry name=&quot;test rule&quot; uuid=&quot;6cf5b2d0-86a1-4461-94b5-f69e8b5cb72f&quot;&gt;
+                &lt;to&gt;
+                    &lt;member&gt;outside&lt;/member&gt;
+                &lt;/to&gt;
+                &lt;from&gt;
+                    &lt;member&gt;public&lt;/member&gt;
+                &lt;/from&gt;
+                &lt;source&gt;
+                    &lt;member&gt;pierre_group&lt;/member&gt;
+                &lt;/source&gt;
+                &lt;destination&gt;
+                    &lt;member&gt;pierre_group&lt;/member&gt;
+                &lt;/destination&gt;
+                &lt;source-user&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/source-user&gt;
+                &lt;category&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/category&gt;
+                &lt;application&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/application&gt;
+                &lt;service&gt;
+                    &lt;member&gt;application-default&lt;/member&gt;
+                &lt;/service&gt;
+                &lt;source-hip&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/source-hip&gt;
+                &lt;destination-hip&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/destination-hip&gt;
+                &lt;action&gt;allow&lt;/action&gt;
+            &lt;/entry&gt;
+            &lt;entry name=&quot;rule-example1&quot; uuid=&quot;1e7f5b19-2042-4348-86cf-de6b61107cec&quot;&gt;
+                &lt;to&gt;
+                    &lt;member&gt;outside&lt;/member&gt;
+                &lt;/to&gt;
+                &lt;from&gt;
+                    &lt;member&gt;public&lt;/member&gt;
+                &lt;/from&gt;
+                &lt;source&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/source&gt;
+                &lt;destination&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                    &lt;member&gt;ip2&lt;/member&gt;
+                &lt;/destination&gt;
+                &lt;source-user&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/source-user&gt;
+                &lt;category&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/category&gt;
+                &lt;application&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/application&gt;
+                &lt;service&gt;
+                    &lt;member&gt;application-default&lt;/member&gt;
+                &lt;/service&gt;
+                &lt;source-hip&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/source-hip&gt;
+                &lt;destination-hip&gt;
+                    &lt;member&gt;any&lt;/member&gt;
+                &lt;/destination-hip&gt;
+                &lt;action&gt;allow&lt;/action&gt;
+            &lt;/entry&gt;
+        &lt;/rules&gt;
+    &lt;/result&gt;
+&lt;/response&gt;</content>
+  </example>
+  <command name="IMPORT">
+    <operation><![CDATA[type=config&action=show]]></operation>
+    <parser>
+      <section>
+        <regexp>@^\s \s*$@</regexp>
+        <xpath>//result/rules/entry</xpath>
+      </section>
+      <lines>
+        <line>
+          <regexp></regexp>
+          <xpath></xpath>
+        </line>
+        <line>
+          <regexp></regexp>
+          <xpath></xpath>
+        </line>
+        <line>
+          <regexp></regexp>
+          <xpath></xpath>
+        </line>
+        <line>
+          <regexp>@&lt;action&gt;(?&lt;action&gt;.*)&lt;/action&gt;@</regexp>
+          <xpath>//action</xpath>
+        </line>
+        <line>
+          <regexp>@&lt;entry name=&quot;(?&lt;name&gt;.*)&quot;&gt;@</regexp>
+          <xpath></xpath>
+        </line>
+        <line>
+          <regexp>@name=&quot;(?&lt;object_id&gt;.*)&quot;@</regexp>
+          <xpath>//@name</xpath>
+        </line>
+        <line>
+          <array name="destinations_address">
+            <lines>
+              <line>
+                <regexp>@&lt;member&gt;(?&lt;destination&gt;.*)&lt;/member&gt;@</regexp>
+                <xpath>//member</xpath>
+              </line>
+            </lines>
+            <xpath>//destination/member</xpath>
+          </array>
+          <regexp></regexp>
+          <xpath></xpath>
+        </line>
+        <line>
+          <array name="sources_address">
+            <lines>
+              <line>
+                <regexp>@&lt;member&gt;(?&lt;source&gt;.*)&lt;/member&gt;@</regexp>
+                <xpath>//member</xpath>
+              </line>
+            </lines>
+            <xpath>//source/member</xpath>
+          </array>
+          <regexp></regexp>
+          <xpath></xpath>
+        </line>
+        <line>
+          <array name="services">
+            <lines>
+              <line>
+                <regexp>@&lt;member&gt;(?&lt;service&gt;.*)&lt;/member&gt;@</regexp>
+                <xpath>//member</xpath>
+              </line>
+            </lines>
+            <xpath>//service/member</xpath>
+          </array>
+          <regexp></regexp>
+          <xpath></xpath>
+        </line>
+        <line>
+          <array name="applications">
+            <lines>
+              <line>
+                <regexp>@&lt;member&gt;(?&lt;application&gt;.*)&lt;/member&gt;@</regexp>
+                <xpath>//member</xpath>
+              </line>
+            </lines>
+            <xpath>//application/member</xpath>
+          </array>
+          <regexp></regexp>
+          <xpath></xpath>
+        </line>
+        <line>
+          <array name="sources_zones">
+            <lines>
+              <line>
+                <regexp>@&lt;member&gt;(?&lt;from&gt;.*)&lt;/member&gt;@</regexp>
+                <xpath>//member</xpath>
+              </line>
+            </lines>
+            <xpath>//from/member</xpath>
+          </array>
+          <regexp></regexp>
+          <xpath></xpath>
+        </line>
+        <line>
+          <array name="destinations_zones">
+            <lines>
+              <line>
+                <regexp>@&lt;member&gt;(?&lt;to&gt;.*)&lt;/member&gt;@</regexp>
+                <xpath>//member</xpath>
+              </line>
+            </lines>
+            <xpath>//to/member</xpath>
+          </array>
+          <regexp></regexp>
+          <xpath></xpath>
+        </line>
+      </lines>
+    </parser>
+    <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/rulebase/security/rules</xpath>
+  </command>
+  <command name="CREATE">
+    <operation><![CDATA[<entry name="{$params.object_id}">
+    <to>
+    	{foreach $params.destinations_zones as $item}
+			<member>{$item.to}</member>
+    	{/foreach}
+    </to>
+    <from>
+       {foreach $params.sources_zones as $item}
+			<member>{$item.from}</member>
+    	{/foreach}
+    </from>
+    <source>
+        {foreach $params.sources as $item}
+			<member>{$item.source}</member>
+    	{/foreach}
+    </source>
+    <destination>
+        {foreach $params.destinations as $item}
+			<member>{$item.destination}</member>
+    	{/foreach}
+    </destination>
+    <application>
+        {foreach $params.applications as $item}
+			<member>{$item.application}</member>
+    	{/foreach}
+    </application>
+    <service>
+        {foreach $params.services as $item}
+			<member>{$item.service}</member>
+    	{/foreach}
+    </service>
+    <action>{$params.action}</action>
+</entry>]]></operation>
+    <rest>type=config&amp;action=set</rest>
+    <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/rulebase/security/rules</xpath>
+  </command>
+  <command name="READ"/>
+  <command name="UPDATE">
+    <operation><![CDATA[<entry name="{$params.object_id}">
+    <to>
+    	{foreach $params.destinations_zones as $item}
+			<member>{$item.to}</member>
+    	{/foreach}
+    </to>
+    <from>
+       {foreach $params.sources_zones as $item}
+			<member>{$item.from}</member>
+    	{/foreach}
+    </from>
+    <source>
+        {foreach $params.sources as $item}
+			<member>{$item.source}</member>
+    	{/foreach}
+    </source>
+    <destination>
+        {foreach $params.destinations as $item}
+			<member>{$item.destination}</member>
+    	{/foreach}
+    </destination>
+    <application>
+        {foreach $params.applications as $item}
+			<member>{$item.application}</member>
+    	{/foreach}
+    </application>
+    <service>
+        {foreach $params.services as $item}
+			<member>{$item.service}</member>
+    	{/foreach}
+    </service>
+    <action>{$params.action}</action>
+</entry>]]></operation>
+    <rest>type=config&amp;action=edit</rest>
+    <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/rulebase/security/rules/entry[@name=&quot;{$params.object_id}&quot;]</xpath>
+  </command>
+  <command name="CONSTRAINT"/>
+  <command name="DELETE">
+    <rest>type=config&amp;action=delete</rest>
+    <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/rulebase/security/rules/entry[@name=&quot;{$params.object_id}&quot;]</xpath>
+  </command>
+  <command name="LIST"/>
+  <displayName>Security Policy PAN OS v10.2</displayName>
+  <order>0</order>
+</ObjectDefinition>
