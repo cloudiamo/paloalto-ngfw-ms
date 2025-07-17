@@ -171,7 +171,7 @@
         </behaviour>
       </behaviors>
     </variable>
-    <variable displayName="tag" name="params.tag" startIncrement="0" type="String" mandatoryArray="false" visible="false" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" isMandatory="false" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Description" name="params.description" startIncrement="0" type="String" mandatoryArray="false" visible="false" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" isMandatory="false" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
   </variables>
   <example>
     <content>&lt;response status=&quot;success&quot;&gt;
@@ -244,6 +244,10 @@
           <regexp>@&lt;ip-netmask&gt;(?&lt;ip&gt;.*)/(?&lt;prefix&gt;.*)&lt;/ip-netmask&gt;@</regexp>
           <xpath>//entry</xpath>
         </line>
+        <line>
+          <regexp>@&lt;description&gt;(?&lt;description&gt;.*)&lt;/description&gt;@</regexp>
+          <xpath>//entry</xpath>
+        </line>
       </lines>
     </parser>
     <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/address</xpath>
@@ -256,6 +260,7 @@
 	{if $params.type == "fqdn"}
 		<fqdn>{$params.ip}</fqdn>
 	{/if}
+	<description>{$params.description}</description>
 </entry>]]></operation>
     <rest>type=config&amp;action=set</rest>
     <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/address</xpath>
@@ -269,6 +274,7 @@
 	{if $params.type == "fqdn"}
 		<fqdn>{$params.ip}</fqdn>
 	{/if}
+	<description>{$params.description}</description>
 </entry>]]></operation>
     <rest>type=config&amp;action=edit</rest>
     <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/address/entry[@name=&quot;{$params.object_id}&quot;]</xpath>
