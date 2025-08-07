@@ -29,20 +29,25 @@
     </directoryNames>
   </information>
   <variables frozen="0">
-    <variable displayName="Rule Name" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
-    <variable displayName="Action" name="params.action" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" isMandatory="true" isUserLocked="false" isEditLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Rule Name" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Action" name="params.action" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="allow" isMandatory="true" isUserLocked="false" isEditLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <values>
+        <values displayValue="allow">allow</values>
+        <values displayValue="deny">deny</values>
+      </values>
+    </variable>
     <variable displayName="Service" name="params.services.0.service" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
     <variable displayName="Application" name="params.applications.0.application" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
     <variable displayName="Source Adress" name="params.sources.0.source" startIncrement="0" type="ObjectRef" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
       <classes>
-        <class>address_group</class>
-        <class>Address_PAN_OS</class>
+        <class>Address</class>
+        <class>AddressGroup</class>
       </classes>
     </variable>
     <variable displayName="Destination Adress" name="params.destinations.0.destination" startIncrement="0" type="ObjectRef" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
       <classes>
-        <class>address_group</class>
-        <class>Address_PAN_OS</class>
+        <class>AddressGroup</class>
+        <class>Address</class>
       </classes>
     </variable>
     <variable displayName="Source  Zone" name="params.sources_zones.0.from" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="possibles values: public ou outside" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" uniqueItemsInDropDownList="false" onlyDetailView="false" createOnlyView="false" localVarNameMatch="" remoteVarNameMatch="" localVarToFilter="" remoteVarToFilter="" remoteVarValueToFilter="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" arrayMinSizeRequired="false" frozen="false" displayNameHeader="" fullDisplayName="" isCompositeKey="false" shared="false" default="any" isMandatory="true" isUserLocked="false" isEditLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
@@ -156,7 +161,7 @@
           <xpath>//@name</xpath>
         </line>
         <line>
-          <array name="destinations_address">
+          <array name="destinations">
             <lines>
               <line>
                 <regexp>@&lt;member&gt;(?&lt;destination&gt;.*)&lt;/member&gt;@</regexp>
@@ -169,7 +174,7 @@
           <xpath></xpath>
         </line>
         <line>
-          <array name="sources_address">
+          <array name="sources">
             <lines>
               <line>
                 <regexp>@&lt;member&gt;(?&lt;source&gt;.*)&lt;/member&gt;@</regexp>
@@ -240,36 +245,64 @@
   <command name="CREATE">
     <operation><![CDATA[<entry name="{$params.object_id}">
     <to>
-    	{foreach $params.destinations_zones as $item}
-			<member>{$item.to}</member>
-    	{/foreach}
+    	{if $params.destinations_zones}
+	    	{foreach $params.destinations_zones as $item}
+				<member>{$item.to}</member>
+	    	{/foreach}
+	    {else}
+	    	<member>any</member>
+    	{/if}
     </to>
     <from>
-       {foreach $params.sources_zones as $item}
+    	{if $params.sources_zones}
+    		{foreach $params.sources_zones as $item}
 			<member>{$item.from}</member>
     	{/foreach}
+		{else}
+	    	<member>any</member>
+    	{/if}
     </from>
     <source>
-        {foreach $params.sources as $item}
-			<member>{$item.source}</member>
-    	{/foreach}
+    	{if $params.sources}
+	        {foreach $params.sources as $item}
+				<member>{$item.source}</member>
+	    	{/foreach}
+		{else}
+			<member>any</member>
+    	{/if}
     </source>
     <destination>
-        {foreach $params.destinations as $item}
-			<member>{$item.destination}</member>
-    	{/foreach}
+    	{if $params.destinations}
+	        {foreach $params.destinations as $item}
+				<member>{$item.destination}</member>
+	    	{/foreach}
+		{else}
+			<member>any</member>
+    	{/if}
     </destination>
     <application>
-        {foreach $params.applications as $item}
-			<member>{$item.application}</member>
-    	{/foreach}
+    	{if $params.applications}
+	        {foreach $params.applications as $item}
+				<member>{$item.application}</member>
+	    	{/foreach}
+		{else}
+			<member>any</member>
+    	{/if}
     </application>
     <service>
-        {foreach $params.services as $item}
-			<member>{$item.service}</member>
-    	{/foreach}
+    	{if $params.services}
+	        {foreach $params.services as $item}
+				<member>{$item.service}</member>
+	    	{/foreach}
+		{else}
+			<member>any</member>
+    	{/if}
     </service>
-    <action>{$params.action}</action>
+    {if $params.action}
+    	<action>{$params.action}</action>
+    {else}
+    	<action>allow</action>
+    {/if}
 </entry>]]></operation>
     <rest>type=config&amp;action=set</rest>
     <xpath>/config/devices/entry[@name=&apos;localhost.localdomain&apos;]/vsys/entry[@name=&apos;vsys1&apos;]/rulebase/security/rules</xpath>
