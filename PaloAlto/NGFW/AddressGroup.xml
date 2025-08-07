@@ -44,7 +44,7 @@
         &lt;address-group&gt;
             &lt;entry name=&quot;sdi_group&quot;&gt;
                 &lt;static&gt;
-                    &lt;member&gt;sdi_test&lt;/member&gt;
+                    &lt;member&gt;sdi_testt&lt;/member&gt;
                     &lt;member&gt;testAddress&lt;/member&gt;
                 &lt;/static&gt;
             &lt;/entry&gt;
