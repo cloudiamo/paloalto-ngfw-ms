@@ -7,11 +7,11 @@ ENV BIN_DIR=/opt/fmc_repository/Process/PythonReference/bin
 RUN install_default_dirs.sh
 
 # Install paloalto-ngfw-ms {{{
-COPY --chown=1000:1000 . /opt/fmc_repository/paloalto-ngfw-ms
-RUN install_repo_deps.sh /opt/fmc_repository/paloalto-ngfw-ms
+COPY --chown=1000:1000 . /opt/fmc_repository/CommandDefinition/paloalto-ngfw-ms
+RUN install_repo_deps.sh /opt/fmc_repository/CommandDefinition/paloalto-ngfw-ms
 
 # Cleanup repository {{{
-RUN rm -rf /opt/fmc_repository/paloalto-ngfw-ms/{.git,docker,Dockerfile}
+RUN rm -rf /opt/fmc_repository/CommandDefinition/paloalto-ngfw-ms/{.git,docker,Dockerfile}
 # }}}
 # Build tarball {{{
 RUN echo "⏳ Creating fmc-repository.tar.xz" && \
@@ -21,7 +21,7 @@ RUN echo "⏳ Creating fmc-repository.tar.xz" && \
 
 FROM docker.io/ubiqube/ubi-almalinux10:latest
 # Copy all resources to the final image {{{
-RUN mkdir -p /opt/fmc_repository && chown -R 1000:1000 /opt/fmc_repository
+RUN mkdir -p /opt/fmc_repository/CommandDefinition && chown -R 1000:1000 /opt/fmc_repository
 USER 1000
 COPY --from=builder /home/ncuser/*.xz /home/ncuser/
 COPY docker-entrypoint.sh /
