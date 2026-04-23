@@ -32,7 +32,7 @@ if [[ -e /opt/fmc_repository/paloalto-ngfw-ms/.git ]]; then
 	mv /opt/fmc_repository/paloalto-ngfw-ms /opt/fmc_repository/CommandDefinition/paloalto-ngfw-ms
 elif [[ -d /opt/fmc_repository/paloalto-ngfw-ms ]]; then
 	log_info "🐞 Not a git repository. Removing the directory for backend compatibility."
-	rm -rf  /opt/fmc_repository/paloalto-ngfw-ms/
+	rm -rf  /opt/fmc_repository/paloalto-ngfw-ms
 fi
 
 if [[ -e /opt/fmc_repository/CommandDefinition/paloalto-ngfw-ms/.git ]]; then
